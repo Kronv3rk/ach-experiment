@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local artifacts (NOT result files - results/ is tracked for reproducibility)
+*.log
+*.tmp
+results/plots/*.png
+results/**/plots/*.png
+
+# Keep per-run JSONs and aggregate results (they are the supporting data for the paper)
+# Do NOT add results/*.json or results/**/*.json to .gitignore

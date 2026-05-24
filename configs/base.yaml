@@ -1,0 +1,41 @@
+# Base experiment configuration (Table 3.1 / Table 3.2)
+# All series configs extend this file.
+
+# Cluster parameters (Table 3.1)
+V: 1000          # virtual tokens
+n0: 10           # initial nodes
+T: 2000          # time steps (ACH needs ~700 steps to converge; 2000 captures steady-state)
+NK: 50000        # key universe
+
+# Capacity classes: 3 strong + 4 medium + 3 weak = 10 nodes
+capacities: [1.0, 1.0, 1.0, 0.55, 0.55, 0.55, 0.55, 0.25, 0.25, 0.25]
+mu_base: 350.0   # requests/step at cap=1.0
+
+# Warmup period (steps excluded from aggregate metrics)
+warmup: 40       # exclude first 40 steps (EWMA startup transient); ACH convergence is part of the measurement
+
+# ACH parameters (Table 3.2)
+ach:
+  ell_star: 0.65
+  eps_on:   0.10
+  eps_off:  0.04
+  tau:      0.85
+  tau_min:  0.50
+  kappa:    0.10
+  M_max:    0.02
+  M_H:      0.25
+  H:        100
+  v_min:    3
+
+# Telemetry parameters
+telemetry:
+  beta:    0.3
+  weights: [0.40, 0.25, 0.35]
+  p:       4
+  alpha:   0.5
+
+# Default noise (clean)
+noise:
+  sigma:  0.0
+  lag:    0
+  p_miss: 0.0

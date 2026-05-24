@@ -1,0 +1,18 @@
+# Series C4: Noisy telemetry
+# Tests algorithm robustness under imperfect observability.
+
+extends: base
+name: C4
+description: "Noisy telemetry"
+n_runs: 30
+# T inherited from base (2000)
+
+load:
+  type: constant
+  lambda: 1437.5
+
+# Telemetry corruption: Gaussian noise + 2-step lag + 10% missing data
+noise:
+  sigma:  0.05
+  lag:    2
+  p_miss: 0.10

@@ -1,0 +1,17 @@
+# Series C1: Stationary load
+# Baseline scenario with constant request rate and no noise.
+
+extends: base
+name: C1
+description: "Stationary load"
+n_runs: 30
+# T inherited from base (2000)
+
+load:
+  type: constant
+  lambda: 1437.5
+
+noise:
+  sigma:  0.0
+  lag:    0
+  p_miss: 0.0

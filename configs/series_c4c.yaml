@@ -1,0 +1,15 @@
+# Series C4c: Strong noise + lag + missing data
+extends: base
+name: C4c
+description: "Strong noise + lag + missing data"
+n_runs: 30
+# T inherited from base (2000)
+
+load:
+  type: constant
+  lambda: 1437.5
+
+noise:
+  sigma:  0.10
+  lag:    2
+  p_miss: 0.10

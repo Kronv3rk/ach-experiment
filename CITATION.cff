@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the paper and the software."
+title: "ACH-Experiment: Adaptive Consistent Hashing simulator for heterogeneous DDBMS"
+type: software
+authors:
+  - family-names: Batanov
+    given-names: Arseniy
+    name-particle: Olegovich
+    affiliation: "MIREA - Russian Technological University"
+    orcid: "https://orcid.org/0009-0004-6968-1139"
+  - family-names: Bolbakov
+    given-names: Roman
+    name-particle: Gennadievich
+    affiliation: "MIREA - Russian Technological University"
+license: MIT
+url: "https://github.com/Kronv3rk/ach-experiment"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Batanov
+      given-names: Arseniy
+      name-particle: Olegovich
+    - family-names: Bolbakov
+      given-names: Roman
+      name-particle: Gennadievich
+  title: "Method of adaptive consistent hashing with bounded reassignment cost for heterogeneous distributed DBMS"
+  journal: "Modern High Technologies"
+  year: 2026

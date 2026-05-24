@@ -1,0 +1,15 @@
+# Series C4a: Weak noise only (sigma=0.02)
+extends: base
+name: C4a
+description: "Weak Gaussian noise"
+n_runs: 30
+# T inherited from base (2000)
+
+load:
+  type: constant
+  lambda: 1437.5
+
+noise:
+  sigma:  0.02
+  lag:    0
+  p_miss: 0.0

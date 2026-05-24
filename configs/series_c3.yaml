@@ -1,0 +1,26 @@
+# Series C3: Node churn + hot keys (Zipf skew)
+# Tests resilience to dynamic topology changes with skewed key access.
+
+extends: base
+name: C3
+description: "Node churn + hot keys"
+n_runs: 30
+# T inherited from base (2000)
+
+load:
+  type: constant
+  lambda: 1437.5
+
+zipf_s: 1.0    # Zipf exponent (hot-key skew)
+
+# Node churn schedule
+churn:
+  - t: 150
+    events:
+      - {type: remove, node: 9}
+      - {type: remove, node: 8}
+  - t: 300
+    events:
+      - {type: add, cap_class: 1}   # cap=0.55
+      - {type: add, cap_class: 1}   # cap=0.55
+      - {type: add, cap_class: 0}   # cap=1.0

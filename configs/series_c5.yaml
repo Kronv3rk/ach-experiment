@@ -1,0 +1,17 @@
+# Series C5: Parameter sensitivity analysis
+# Sweeps over eps_on and kappa to characterise ACH sensitivity.
+
+extends: base
+name: C5
+description: "Parameter sensitivity"
+n_runs: 10
+# T inherited from base (2000)
+
+load:
+  type: constant
+  lambda: 1437.5
+
+# Grid of hyperparameter values to sweep
+sensitivity:
+  eps_on: [0.05, 0.08, 0.10, 0.15, 0.20]
+  kappa:  [0.05, 0.10, 0.15, 0.20]

@@ -1,0 +1,24 @@
+# Series C2: Step load + periodic modulation + node degradation
+# Tests response to sudden load increase, oscillation, and hardware faults.
+
+extends: base
+name: C2
+description: "Step load + periodic + degradation"
+n_runs: 30
+# T inherited from base (2000); events scaled to occur early so algorithms have time to adapt
+
+load:
+  type:        step_periodic
+  lambda_low:  1437.5
+  lambda_high: 3200.0
+  step_t:      200       # step-up at t=200
+  periodic_t:  350       # periodic modulation starts at t=350
+  period:      50
+  amplitude:   0.25
+
+# Nodes 7 and 8 (weak) degrade to 40% of original capacity at t=250
+degradation:
+  t_start: 250
+  nodes:
+    "7": 0.4
+    "8": 0.4
